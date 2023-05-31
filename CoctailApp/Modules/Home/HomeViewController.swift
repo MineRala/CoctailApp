@@ -80,7 +80,7 @@ extension HomeViewController: HomeDisplayLogic {
             self.collectionView.dataSource = self.dataSource
             self.collectionView.delegate = self.dataSource
             self.dataSource?.delegate = self
-            if self.view.frame.width >= 375 {
+            if self.view.frame.width <= 375 {
                 self.dataSource?.cellSize = CGSize(width: 160, height: 260)
             }
             self.collectionView.reloadData()

@@ -1,8 +1,8 @@
 //
 //  NetworkManager.swift
-//  VehicleApp
+//  CoctailApp
 //
-//  Created by Mine Rala on 7.04.2023.
+//  Created by Mine Rala on 30.05.2023.
 //
 
 import Foundation

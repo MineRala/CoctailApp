@@ -23,7 +23,6 @@ extension HomeInteractor: HomeBusinessLogic {
             guard let self else { return }
             switch result {
             case .success(let allCoctails):
-                print(allCoctails)
                 self.presenter?.presentCoctailsData(allCoctails.drinks)
             case .failure(let error):
                 print(error)

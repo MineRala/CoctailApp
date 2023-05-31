@@ -1,5 +1,5 @@
 //
-//  Enpoint.swift
+//  Endpoint.swift
 //  CoctailApp
 //
 //  Created by Mine Rala on 30.05.2023.

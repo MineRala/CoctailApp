@@ -15,7 +15,6 @@ final class HomeInteractor {
     // MARK: - Properties
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
-    
 }
 
 extension HomeInteractor: HomeBusinessLogic {

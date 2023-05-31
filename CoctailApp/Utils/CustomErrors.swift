@@ -1,5 +1,5 @@
 //
-//  CustomError.swift
+//  CustomErrors.swift
 //  CoctailApp
 //
 //  Created by Mine Rala on 31.05.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum VAError: String, Error {
+enum CustomErrors: String, Error {
     case invalidKeyword = "Invalid keyword. Please try again"
     case unableToComplete = "Unable to complete your request. Please check your internet connection."
     case invalidResponse = "Invalid response from the server. Please try again."

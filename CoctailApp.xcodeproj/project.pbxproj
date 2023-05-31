@@ -27,8 +27,7 @@
 		E8924E102A2547AA006FC7C6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8924E0F2A2547AA006FC7C6 /* Color.swift */; };
 		E8924E142A2552D8006FC7C6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8924E132A2552D8006FC7C6 /* NetworkManager.swift */; };
 		E8924E162A25530D006FC7C6 /* Enpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8924E152A25530D006FC7C6 /* Enpoint.swift */; };
-		E8924E182A275E7F006FC7C6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8924E172A275E7F006FC7C6 /* APIManager.swift */; };
-		E8924E1A2A275EB1006FC7C6 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8924E192A275EB1006FC7C6 /* CustomErrors.swift */; };
+		E8924E1D2A276E77006FC7C6 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8924E1C2A276E77006FC7C6 /* CustomErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +50,7 @@
 		E8924E0F2A2547AA006FC7C6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E8924E132A2552D8006FC7C6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E8924E152A25530D006FC7C6 /* Enpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enpoint.swift; sourceTree = "<group>"; };
-		E8924E172A275E7F006FC7C6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		E8924E192A275EB1006FC7C6 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
+		E8924E1C2A276E77006FC7C6 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,29 +86,25 @@
 		E8924DD82A253D5C006FC7C6 /* CoctailApp */ = {
 			isa = PBXGroup;
 			children = (
+				E8924E1E2A277153006FC7C6 /* Base */,
 				E8924E0E2A25479B006FC7C6 /* Utils */,
-				E8924DFF2A2542B4006FC7C6 /* Model */,
-				E8924DED2A253DC0006FC7C6 /* Scene */,
-				E8924DD92A253D5C006FC7C6 /* AppDelegate.swift */,
-				E8924DDB2A253D5C006FC7C6 /* SceneDelegate.swift */,
+				E8924E1B2A276E50006FC7C6 /* Managers */,
+				E8924DFF2A2542B4006FC7C6 /* Models */,
+				E8924DED2A253DC0006FC7C6 /* Modules */,
 				E8924DDD2A253D5C006FC7C6 /* ViewController.swift */,
 				E8924DE22A253D5F006FC7C6 /* Assets.xcassets */,
 				E8924DE42A253D5F006FC7C6 /* LaunchScreen.storyboard */,
 				E8924DE72A253D5F006FC7C6 /* Info.plist */,
-				E8924E132A2552D8006FC7C6 /* NetworkManager.swift */,
-				E8924E152A25530D006FC7C6 /* Enpoint.swift */,
-				E8924E172A275E7F006FC7C6 /* APIManager.swift */,
-				E8924E192A275EB1006FC7C6 /* CustomErrors.swift */,
 			);
 			path = CoctailApp;
 			sourceTree = "<group>";
 		};
-		E8924DED2A253DC0006FC7C6 /* Scene */ = {
+		E8924DED2A253DC0006FC7C6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				E8924DEE2A253DC7006FC7C6 /* Home */,
 			);
-			path = Scene;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		E8924DEE2A253DC7006FC7C6 /* Home */ = {
@@ -128,12 +122,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		E8924DFF2A2542B4006FC7C6 /* Model */ = {
+		E8924DFF2A2542B4006FC7C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E8924E002A2542BC006FC7C6 /* Coctail.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E8924E042A25459D006FC7C6 /* Cell */ = {
@@ -147,9 +141,28 @@
 		E8924E0E2A25479B006FC7C6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E8924E152A25530D006FC7C6 /* Enpoint.swift */,
 				E8924E0F2A2547AA006FC7C6 /* Color.swift */,
+				E8924E1C2A276E77006FC7C6 /* CustomErrors.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E8924E1B2A276E50006FC7C6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E8924E132A2552D8006FC7C6 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E8924E1E2A277153006FC7C6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E8924DD92A253D5C006FC7C6 /* AppDelegate.swift */,
+				E8924DDB2A253D5C006FC7C6 /* SceneDelegate.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,13 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8924E182A275E7F006FC7C6 /* APIManager.swift in Sources */,
 				E8924DDE2A253D5C006FC7C6 /* ViewController.swift in Sources */,
-				E8924E1A2A275EB1006FC7C6 /* CustomErrors.swift in Sources */,
 				E8924E162A25530D006FC7C6 /* Enpoint.swift in Sources */,
 				E8924DDA2A253D5C006FC7C6 /* AppDelegate.swift in Sources */,
 				E8924DF82A253E6B006FC7C6 /* HomeRouter.swift in Sources */,
 				E8924E012A2542BC006FC7C6 /* Coctail.swift in Sources */,
+				E8924E1D2A276E77006FC7C6 /* CustomErrors.swift in Sources */,
 				E8924E102A2547AA006FC7C6 /* Color.swift in Sources */,
 				E8924DDC2A253D5C006FC7C6 /* SceneDelegate.swift in Sources */,
 				E8924DF42A253E54006FC7C6 /* HomePresenter.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  HomeTableViewCell.swift
+//  HomeCollectionViewCell.swift
 //  CoctailApp
 //
 //  Created by Mine Rala on 29.05.2023.
@@ -21,7 +21,7 @@ public struct CellModel {
     var image: String
 }
 
-final class HomeTableViewCell: UITableViewCell {
+final class HomeCollectionViewCell: UICollectionViewCell {
     
     private lazy var containerView: UIView = {
         let view = UIView()
@@ -62,17 +62,15 @@ final class HomeTableViewCell: UITableViewCell {
         return label
     }()
     
-
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         configureCell()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         posterImageView.image = nil
@@ -82,7 +80,7 @@ final class HomeTableViewCell: UITableViewCell {
 }
 
 //MARK: - Configure Cell
-extension HomeTableViewCell {
+extension HomeCollectionViewCell {
     private func configureCell() {
         contentView.addSubview(containerView)
     
@@ -95,33 +93,32 @@ extension HomeTableViewCell {
         containerView.addSubview(posterImageView)
         
         posterImageView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-8)
-            make.top.left.equalToSuperview().offset(8)
-            make.width.equalToSuperview().multipliedBy(0.35)
+            make.top.equalToSuperview().offset(16)
+            make.centerX.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.65)
+            make.width.equalToSuperview().multipliedBy(0.8)
         }
         
         containerView.addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(posterImageView.snp.top)
-            make.left.equalTo(posterImageView.snp.right).offset(8)
-            make.right.equalToSuperview().offset(-8)
-            make.height.equalToSuperview().multipliedBy(0.4)
+            make.top.equalTo(posterImageView.snp.bottom).offset(16)
+            make.centerX.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.05)
         }
         
         containerView.addSubview(categoryLabel)
         
         categoryLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
-            make.left.equalTo(titleLabel.snp.left)
-            make.height.equalTo(32)
-            make.width.equalTo(80)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
+            make.centerX.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.05)
         }
     }
 }
 
 //MARK: - Set Cell
-extension HomeTableViewCell {
+extension HomeCollectionViewCell {
     func setCell(model: CellModel) {
         posterImageView.kf.setImage(with: URL(string: model.image))
         titleLabel.text = model.name

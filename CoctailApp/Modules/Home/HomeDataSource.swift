@@ -15,36 +15,30 @@ class HomeDataSource: NSObject {
     // MARK: - Properties
     var coctails: [Coctail]
     public weak var delegate: HomeDataSourceDelegate?
-
+    var cellSize = CGSize(width: 170, height: 260)
+    
     // MARK: - init
     init(coctails: [Coctail]) {
         self.coctails = coctails
     }
 }
 
-// MARK: - UITableViewDataSource
-extension HomeDataSource: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        coctails.count
+// MARK: CollectionView Protocols
+extension HomeDataSource: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return coctails.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell else { return UITableViewCell() }
-        let coctail = coctails[indexPath.row]
-        cell.setCell(model: CellModel(name: coctail.name, category: coctail.category, image: coctail.image))
-        return cell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell {
+            let coctail = coctails[indexPath.row]
+            cell.setCell(model: CellModel(name: coctail.name, category: coctail.category, image: coctail.image))
+            return cell}
+        return UICollectionViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return cellSize
+       
     }
 }
-
-// MARK: - UITableViewDelegate
-extension HomeDataSource: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let coctail = coctails[indexPath.row]
-        delegate?.selectedCoctail(coctail)
-    }
-}
-
